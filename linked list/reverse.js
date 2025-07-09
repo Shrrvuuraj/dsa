@@ -75,4 +75,29 @@ class DoublyLinkedList {
     this.length--;
     return temp;
   }
+  reverse(){
+    if(!this.head|| this.length===1) return ;
+
+    let temp=this.head;
+    
+    
+    this.tail=temp;
+    while (temp !== null) {
+  let next = temp.next;
+  temp.next = temp.prev;
+  temp.prev = next;
+  temp = next;
 }
+this.head=this.tail.prev;
+
+  }
+  
+}
+let Doublyll = new DoublyLinkedList("hello");
+Doublyll.push(0);
+Doublyll.push("shrrvvuu");
+Doublyll.push("anshul");
+
+Doublyll.unshift("unshifted");
+Doublyll.reverse()
+console.log(Doublyll);
